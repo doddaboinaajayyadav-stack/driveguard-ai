@@ -1,4 +1,4 @@
-# DriveGuard AI ðŸš—ðŸ§
+# DriveGuard AI 
 ## Driver Drowsiness Detection Using Deep Learning
 
 DriveGuard AI is a real-time driver eye-state monitoring prototype that uses a Convolutional Neural Network (CNN), OpenCV, PyTorch, and Flask to classify eye states as **OPEN** or **CLOSED** and display a visual warning when sustained eye closure is detected.
