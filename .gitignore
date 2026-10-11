@@ -1,0 +1,41 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Dataset images
+dataset/raw/
+dataset/train/
+dataset/val/
+dataset/test/
+
+# Trained model weights
+models/*.pt
+models/*.pth
+models/*.onnx
+
+# Local logs and temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Test artifacts
+.pytest_cache/
+.coverage

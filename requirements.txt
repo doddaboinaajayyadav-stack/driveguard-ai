@@ -1,0 +1,83 @@
+# =============================================================================
+# DriveGuard AI — requirements.txt
+# =============================================================================
+# Environment verified on:
+#   OS         : Windows 11 Home, ARM64 (Qualcomm ARMv8 running via AMD64 emulation)
+#   Python     : 3.11.0  [AMD64 emulation, MSC v.1933]
+#   pip        : 26.2.1 (inside .venv)
+#   Updated    : 2026-10-11
+#
+# HOW TO INSTALL:
+#   # 1. Create and activate virtual environment
+#   python -m venv .venv
+#   .venv\Scripts\activate
+#
+#   # 2. Upgrade pip
+#   python -m pip install --upgrade pip
+#
+#   # 3. Install PyTorch (CPU) from PyTorch's own wheel server
+#   pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+#
+#   # 4. Install remaining packages
+#   pip install -r requirements.txt
+#
+# STATUS KEY:
+#   [INSTALLED+VERIFIED] — installed in .venv and import-tested
+#   [TO INSTALL]         — not yet installed; version chosen for compatibility
+#   [DEFERRED]           — needed in a later phase; do not install yet
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# MILESTONE 1 — Core packages (Phase 2) — ALL VERIFIED
+# -----------------------------------------------------------------------------
+
+# [INSTALLED+VERIFIED] PyTorch CPU build — win_amd64 wheel confirmed
+# Install separately with: pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0
+
+# [INSTALLED+VERIFIED] OpenCV — win_amd64 cp37-abi3 wheel, stable
+opencv-python==4.10.0.84
+
+# [INSTALLED+VERIFIED] Flask web framework
+flask==3.1.3
+
+# [INSTALLED+VERIFIED] NumPy — pulled in by opencv-python, also used by CNN
+numpy==2.4.6
+
+# [INSTALLED+VERIFIED] Pillow — image loading for training pipeline
+pillow==11.3.0
+
+# -----------------------------------------------------------------------------
+# MILESTONE 2 — Machine Learning tools (Phase 3 — Training pipeline)
+# -----------------------------------------------------------------------------
+
+# [TO INSTALL] Evaluation metrics and confusion matrix
+# scikit-learn==1.9.1 already installed globally; install in venv during Phase 3
+scikit-learn==1.9.1
+
+# [TO INSTALL] Plotting: training curves and confusion matrix heatmap
+matplotlib==3.10.3
+seaborn==0.13.2
+
+# -----------------------------------------------------------------------------
+# MILESTONE 3 — Real-time dashboard (Phase 5)
+# -----------------------------------------------------------------------------
+
+# [DEFERRED] WebSocket support for live metric push to browser
+# Validate flask-socketio + eventlet compatibility on Windows before installing
+# flask-socketio==5.5.1
+# eventlet==0.38.2
+
+# -----------------------------------------------------------------------------
+# MILESTONE 4 — Audio alarm (Phase 6)
+# -----------------------------------------------------------------------------
+
+# [DEFERRED] Audio playback — validate pygame ARM64/AMD64 emulation wheel
+# pygame==2.6.1
+
+# -----------------------------------------------------------------------------
+# TORCHVISION — Explicitly excluded
+# -----------------------------------------------------------------------------
+# torchvision is NOT required for this project.
+# Our custom CNN uses raw torch.nn layers with PIL + OpenCV for image loading.
+# torchvision would only be needed if using pretrained models (e.g. ResNet).

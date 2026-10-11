@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveGuard AI | Driver Safety Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand-mark">DG</div>
+        <div>
+            <h1>DriveGuard <span>AI</span></h1>
+            <p>DRIVER SAFETY MONITOR</p>
+        </div>
+        <div class="live-pill"><span class="dot"></span> CAMERA PREVIEW</div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="eyebrow">INTELLIGENT DRIVER MONITORING</p>
+            <h2>Stay alert.<br><span>Arrive safely.</span></h2>
+            <p class="description">
+                A computer-vision demonstration for driver drowsiness research.
+            </p>
+        </section>
+
+        <section class="status-banner">
+            <div class="status-icon">!</div>
+            <div>
+                <strong>DEMO MODE — MODEL NOT TRAINED</strong>
+                <p>Face and eye outlines are for preview only. Drowsiness predictions and safety alerts are disabled.</p>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <article class="camera-card">
+                <div class="card-heading">
+                    <div>
+                        <p class="eyebrow">LIVE INPUT</p>
+                        <h3>Camera feed</h3>
+                    </div>
+                    <span class="tag">OPENCV</span>
+                </div>
+                <div class="camera-frame">
+                    <img src="{{ url_for('video_feed') }}" alt="Live webcam preview">
+                </div>
+                <p class="hint">Allow camera access if Windows requests permission.</p>
+            </article>
+
+            <aside class="side-panel">
+                <article class="metric-card">
+                    <p class="eyebrow">MODEL STATUS</p>
+                    <h3>Not trained</h3>
+                    <p>No verified model weights are available for predictions.</p>
+                </article>
+                <article class="metric-card">
+                    <p class="eyebrow">FACE DETECTION</p>
+                    <h3>Preview only</h3>
+                    <p>OpenCV Haar Cascade outlines detected faces and eyes.</p>
+                </article>
+                <article class="metric-card warning-card">
+                    <p class="eyebrow">SAFETY NOTICE</p>
+                    <p>This prototype is not a certified driver-safety system. Never rely on it to prevent an accident.</p>
+                </article>
+            </aside>
+        </section>
+
+        <footer>
+            <span>DRIVEGUARD AI</span>
+            <span>College Project · Deep Learning & Computer Vision</span>
+        </footer>
+    </main>
+</body>
+</html>
